@@ -39,6 +39,28 @@ export class UserEntity {
   @Column({ type: 'boolean', default: false })
   is_email_verified: boolean;
 
+  // Seller-specific fields
+  @Column({ type: 'boolean', default: false })
+  is_seller_approved: boolean;
+
+  @Column({ type: 'timestamp', nullable: true })
+  seller_approved_at: Date | null;
+
+  @Column({ type: 'uuid', nullable: true, name: 'approved_by' })
+  approved_by: string | null;
+
+  @Column({ type: 'boolean', default: false })
+  is_kyc_verified: boolean;
+
+  @Column({ type: 'varchar', nullable: true })
+  first_name: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  last_name: string | null;
+
+  @Column({ type: 'varchar', nullable: true })
+  profile_picture: string | null;
+
   @CreateDateColumn()
   created_at: Date;
 

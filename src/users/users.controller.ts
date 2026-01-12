@@ -6,7 +6,8 @@ import {
   Param,
   ParseIntPipe,
 } from '@nestjs/common';
-import { UsersService, User } from './users.service';
+import { UsersService } from './users.service';
+import type { User } from './users.service';
 
 @Controller('users')
 export class UsersController {
