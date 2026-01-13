@@ -13,18 +13,15 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const users_module_1 = require("./users/users.module");
-const auth_module_1 = require("./auth/auth.module");
-const customer_auth_module_1 = require("./customer-auth/customer-auth.module");
-const seller_auth_module_1 = require("./seller-auth/seller-auth.module");
-const admin_auth_module_1 = require("./admin-auth/admin-auth.module");
-const admin_management_module_1 = require("./admin-management/admin-management.module");
-const otp_module_1 = require("./otp/otp.module");
-const refresh_token_module_1 = require("./refresh-tokens/refresh-token.module");
 const typeorm_2 = require("typeorm");
 const logger_middleware_1 = require("./utils/middleware/logger.middleware");
+const auth_module_1 = require("./auth/auth.module");
+const user_module_1 = require("./user/user.module");
+const seller_module_1 = require("./seller/seller.module");
+const admin_module_1 = require("./admin/admin.module");
+const refresh_tokens_module_1 = require("./refresh-tokens/refresh-tokens.module");
+const roles_module_1 = require("./roles/roles.module");
+const otp_module_1 = require("./otp/otp.module");
 let AppModule = class AppModule {
     dataSource;
     constructor(dataSource) {
@@ -60,17 +57,16 @@ exports.AppModule = AppModule = __decorate([
                     logging: true,
                 }),
             }),
-            users_module_1.UsersModule,
             auth_module_1.AuthModule,
-            customer_auth_module_1.CustomerAuthModule,
-            seller_auth_module_1.SellerAuthModule,
-            admin_auth_module_1.AdminAuthModule,
-            admin_management_module_1.AdminManagementModule,
+            user_module_1.UserModule,
+            seller_module_1.SellerModule,
+            admin_module_1.AdminModule,
+            refresh_tokens_module_1.RefreshTokensModule,
+            roles_module_1.RolesModule,
             otp_module_1.OtpModule,
-            refresh_token_module_1.RefreshTokenModule,
         ],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        controllers: [],
+        providers: [],
     }),
     __metadata("design:paramtypes", [typeorm_2.DataSource])
 ], AppModule);

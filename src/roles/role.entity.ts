@@ -1,28 +1,19 @@
 import {
   Entity,
-  Column,
   PrimaryGeneratedColumn,
+  Column,
   CreateDateColumn,
-  UpdateDateColumn,
+  BaseEntity,
 } from 'typeorm';
 
-export enum RoleName {
-  USER = 'USER',
-  SELLER = 'SELLER',
-  ADMIN = 'ADMIN',
-}
-
 @Entity('roles')
-export class RoleEntity {
+export class RoleEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'enum', enum: RoleName, unique: true })
-  name: RoleName;
+  @Column({ unique: true })
+  name: string; // Role name: USER | SELLER | ADMIN
 
-  @CreateDateColumn()
+  @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
-
-  @UpdateDateColumn()
-  updated_at: Date;
 }

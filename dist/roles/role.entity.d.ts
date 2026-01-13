@@ -1,11 +1,6 @@
-export declare enum RoleName {
-    USER = "USER",
-    SELLER = "SELLER",
-    ADMIN = "ADMIN"
-}
-export declare class RoleEntity {
+import { BaseEntity } from 'typeorm';
+export declare class RoleEntity extends BaseEntity {
     id: string;
-    name: RoleName;
+    name: string;
     created_at: Date;
-    updated_at: Date;
 }

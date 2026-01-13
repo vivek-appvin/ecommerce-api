@@ -9,19 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RoleEntity = exports.RoleName = void 0;
+exports.RoleEntity = void 0;
 const typeorm_1 = require("typeorm");
-var RoleName;
-(function (RoleName) {
-    RoleName["USER"] = "USER";
-    RoleName["SELLER"] = "SELLER";
-    RoleName["ADMIN"] = "ADMIN";
-})(RoleName || (exports.RoleName = RoleName = {}));
-let RoleEntity = class RoleEntity {
+let RoleEntity = class RoleEntity extends typeorm_1.BaseEntity {
     id;
     name;
     created_at;
-    updated_at;
 };
 exports.RoleEntity = RoleEntity;
 __decorate([
@@ -29,17 +22,13 @@ __decorate([
     __metadata("design:type", String)
 ], RoleEntity.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: 'enum', enum: RoleName, unique: true }),
+    (0, typeorm_1.Column)({ unique: true }),
     __metadata("design:type", String)
 ], RoleEntity.prototype, "name", void 0);
 __decorate([
-    (0, typeorm_1.CreateDateColumn)(),
+    (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)
 ], RoleEntity.prototype, "created_at", void 0);
-__decorate([
-    (0, typeorm_1.UpdateDateColumn)(),
-    __metadata("design:type", Date)
-], RoleEntity.prototype, "updated_at", void 0);
 exports.RoleEntity = RoleEntity = __decorate([
     (0, typeorm_1.Entity)('roles')
 ], RoleEntity);
