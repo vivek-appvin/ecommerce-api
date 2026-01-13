@@ -55,6 +55,9 @@ export class UserEntity extends BaseEntity {
   @Column({ type: 'timestamp', nullable: true })
   last_login_at: Date; // Last login timestamp (nullable)
 
+  @Column({ default: false })
+  is_deleted: boolean; // Soft delete flag
+
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 

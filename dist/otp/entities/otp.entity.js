@@ -24,6 +24,7 @@ let OtpEntity = class OtpEntity extends typeorm_1.BaseEntity {
     purpose;
     expires_at;
     is_used;
+    is_deleted;
     created_at;
     updated_at;
 };
@@ -55,6 +56,10 @@ __decorate([
     (0, typeorm_1.Column)({ default: false }),
     __metadata("design:type", Boolean)
 ], OtpEntity.prototype, "is_used", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], OtpEntity.prototype, "is_deleted", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)

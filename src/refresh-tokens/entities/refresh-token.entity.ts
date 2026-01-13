@@ -28,6 +28,9 @@ export class RefreshTokenEntity extends BaseEntity {
   @Column({ type: 'timestamp' })
   expires_at: Date; // Token expiration timestamp
 
+  @Column({ default: false })
+  is_deleted: boolean; // Soft delete flag
+
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 

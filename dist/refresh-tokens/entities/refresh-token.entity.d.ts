@@ -6,6 +6,7 @@ export declare class RefreshTokenEntity extends BaseEntity {
     user: UserEntity;
     token_hash: string;
     expires_at: Date;
+    is_deleted: boolean;
     created_at: Date;
     updated_at: Date;
 }

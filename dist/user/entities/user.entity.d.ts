@@ -17,6 +17,7 @@ export declare class UserEntity extends BaseEntity {
     is_phone_verified: boolean;
     is_email_verified: boolean;
     last_login_at: Date;
+    is_deleted: boolean;
     created_at: Date;
     updated_at: Date;
 }

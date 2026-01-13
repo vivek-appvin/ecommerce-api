@@ -58,6 +58,9 @@ export class SellerKycEntity extends BaseEntity {
   @Column({ type: 'timestamp', nullable: true })
   verified_at: Date; // When KYC was verified (nullable)
 
+  @Column({ default: false })
+  is_deleted: boolean; // Soft delete flag
+
   @UpdateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP',

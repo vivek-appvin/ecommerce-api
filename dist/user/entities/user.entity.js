@@ -30,6 +30,7 @@ let UserEntity = class UserEntity extends typeorm_1.BaseEntity {
     is_phone_verified;
     is_email_verified;
     last_login_at;
+    is_deleted;
     created_at;
     updated_at;
 };
@@ -82,6 +83,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'timestamp', nullable: true }),
     __metadata("design:type", Date)
 ], UserEntity.prototype, "last_login_at", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], UserEntity.prototype, "is_deleted", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)

@@ -31,6 +31,7 @@ let SellerKycEntity = class SellerKycEntity extends typeorm_1.BaseEntity {
     status;
     submitted_at;
     verified_at;
+    is_deleted;
     updated_at;
 };
 exports.SellerKycEntity = SellerKycEntity;
@@ -86,6 +87,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'timestamp', nullable: true }),
     __metadata("design:type", Date)
 ], SellerKycEntity.prototype, "verified_at", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], SellerKycEntity.prototype, "is_deleted", void 0);
 __decorate([
     (0, typeorm_1.UpdateDateColumn)({
         type: 'timestamp',

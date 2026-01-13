@@ -23,8 +23,11 @@ import { OtpModule } from './otp/otp.module';
     type: 'postgres',
     url: configService.get<string>('DATABASE_URL'),
     autoLoadEntities: true,
-    synchronize: false,
+    synchronize: true,
     logging: true,
+    ssl: {
+      rejectUnauthorized: false,
+    },
   }),
 }),
    AuthModule,

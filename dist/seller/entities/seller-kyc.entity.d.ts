@@ -18,5 +18,6 @@ export declare class SellerKycEntity extends BaseEntity {
     status: SellerKycStatus;
     submitted_at: Date;
     verified_at: Date;
+    is_deleted: boolean;
     updated_at: Date;
 }

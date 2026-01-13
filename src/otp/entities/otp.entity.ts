@@ -36,6 +36,9 @@ export class OtpEntity extends BaseEntity {
   @Column({ default: false })
   is_used: boolean; // Whether OTP has been used
 
+  @Column({ default: false })
+  is_deleted: boolean; // Soft delete flag
+
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   created_at: Date;
 

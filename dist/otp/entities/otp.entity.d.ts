@@ -11,6 +11,7 @@ export declare class OtpEntity extends BaseEntity {
     purpose: OtpPurpose;
     expires_at: Date;
     is_used: boolean;
+    is_deleted: boolean;
     created_at: Date;
     updated_at: Date;
 }

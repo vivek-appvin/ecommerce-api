@@ -14,6 +14,7 @@ const typeorm_1 = require("typeorm");
 let RoleEntity = class RoleEntity extends typeorm_1.BaseEntity {
     id;
     name;
+    is_deleted;
     created_at;
 };
 exports.RoleEntity = RoleEntity;
@@ -25,6 +26,10 @@ __decorate([
     (0, typeorm_1.Column)({ unique: true }),
     __metadata("design:type", String)
 ], RoleEntity.prototype, "name", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], RoleEntity.prototype, "is_deleted", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)

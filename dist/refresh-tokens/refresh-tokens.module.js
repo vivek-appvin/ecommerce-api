@@ -8,12 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RefreshTokensModule = void 0;
 const common_1 = require("@nestjs/common");
+const typeorm_1 = require("@nestjs/typeorm");
 const refresh_tokens_service_1 = require("./refresh-tokens.service");
+const refresh_token_entity_1 = require("./entities/refresh-token.entity");
+const user_entity_1 = require("../user/entities/user.entity");
 let RefreshTokensModule = class RefreshTokensModule {
 };
 exports.RefreshTokensModule = RefreshTokensModule;
 exports.RefreshTokensModule = RefreshTokensModule = __decorate([
     (0, common_1.Module)({
+        imports: [typeorm_1.TypeOrmModule.forFeature([refresh_token_entity_1.RefreshTokenEntity, user_entity_1.UserEntity])],
         providers: [refresh_tokens_service_1.RefreshTokensService]
     })
 ], RefreshTokensModule);

@@ -18,6 +18,7 @@ let RefreshTokenEntity = class RefreshTokenEntity extends typeorm_1.BaseEntity {
     user;
     token_hash;
     expires_at;
+    is_deleted;
     created_at;
     updated_at;
 };
@@ -43,6 +44,10 @@ __decorate([
     (0, typeorm_1.Column)({ type: 'timestamp' }),
     __metadata("design:type", Date)
 ], RefreshTokenEntity.prototype, "expires_at", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ default: false }),
+    __metadata("design:type", Boolean)
+], RefreshTokenEntity.prototype, "is_deleted", void 0);
 __decorate([
     (0, typeorm_1.CreateDateColumn)({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' }),
     __metadata("design:type", Date)
